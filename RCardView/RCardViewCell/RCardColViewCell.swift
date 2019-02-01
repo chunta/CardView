@@ -10,9 +10,10 @@ import UIKit
 
 class RCardColViewCell: UICollectionViewCell {
 
+    @IBOutlet var title:UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
 }

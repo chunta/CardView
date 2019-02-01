@@ -12,6 +12,8 @@ import Alamofire
 class ViewController: UIViewController {
 
     var cardView:RCardViewController!
+    var cardHorizontalView:RCardHorizontalVCtl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +26,17 @@ class ViewController: UIViewController {
         NSLayoutConstraint(item: cardView.view, attribute: .leading, relatedBy: .equal, toItem: guide, attribute:.leading, multiplier: 1.0, constant: 10.0).isActive = true
         NSLayoutConstraint(item: cardView.view, attribute: .trailing, relatedBy: .equal, toItem: guide, attribute:.trailing, multiplier: 1.0, constant: -10.0).isActive = true
         NSLayoutConstraint(item: cardView.view, attribute: .top, relatedBy: .equal, toItem: guide, attribute: .top, multiplier: 1.0, constant: 10.0).isActive = true
-        NSLayoutConstraint(item: cardView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.4, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: cardView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.9, constant: 0.0).isActive = true
         
+        /*
+        cardHorizontalView = RCardHorizontalVCtl.init(configuration: config)
+        cardHorizontalView.view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(cardHorizontalView.view)
+        NSLayoutConstraint(item: cardHorizontalView.view, attribute: .leading, relatedBy: .equal, toItem: guide, attribute:.leading, multiplier: 1.0, constant: 10.0).isActive = true
+        NSLayoutConstraint(item: cardHorizontalView.view, attribute: .trailing, relatedBy: .equal, toItem: guide, attribute:.trailing, multiplier: 1.0, constant: -10.0).isActive = true
+        NSLayoutConstraint(item: cardHorizontalView.view, attribute: .top, relatedBy: .equal, toItem: cardView.view, attribute: .bottom, multiplier: 1.0, constant: 10.0).isActive = true
+        NSLayoutConstraint(item: cardHorizontalView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.5, constant: 0.0).isActive = true
+        */
         let headers: HTTPHeaders = [
             "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
             "Accept": "application/json"

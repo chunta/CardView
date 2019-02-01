@@ -50,7 +50,6 @@ protocol RCardViewControllerDelegate {
 class RCardViewController: UIViewController {
 
     private var configuration:RCardConfig!
-    private let src:[Int] = [1,2,3,4,5,6,7,8,9,10]
     private var heightMap:Dictionary<Int, CGSize> = Dictionary<Int, CGSize>()
     private var cardList:RCardModelList?
     private var tableView:UITableView!
@@ -88,21 +87,13 @@ class RCardViewController: UIViewController {
         self.tableView.dataSource = self
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        if (self.configuration.direction == .Horizontal)
-        {
-            self.refreshOrientation()
-        }
-    }
-    
     func injectModel(_ cardModelList:RCardModelList)
     {
         cardList = cardModelList
         self.tableView.reloadData()
     }
     
+    /*
     func refreshOrientation()
     {
         if (self.tableView != nil)
@@ -115,7 +106,7 @@ class RCardViewController: UIViewController {
             self.tableView.transform = CGAffineTransform.init(rotationAngle: CGFloat(-1*CGFloat.pi / 2))
         }
     }
-
+    */
 }
 
 extension RCardViewController: UITableViewDelegate, UITableViewDataSource
@@ -144,6 +135,7 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         let cell:RTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RTableViewCell") as! RTableViewCell
         cell.title.text = cardList?.content[indexPath.row].title
         
+        /*
         if (self.configuration.direction == .Horizontal)
         {
             if (cell.contentView.transform==CGAffineTransform.identity)
@@ -154,7 +146,8 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
                 cell.contentView.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat.pi/2.0));
             }
         }
-        
+        */
+                
         let row:Int = indexPath.row
         Alamofire.request((cardList?.content[indexPath.row].url)!).responseImage { response in
             if let image = response.result.value {
@@ -163,7 +156,7 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
                 {
                     self.heightMap[row] = image.size
                     tableView.beginUpdates()
-                    tableView.reloadRows(at: [IndexPath.init(row: row, section: 0)], with: .fade)
+                    tableView.reloadRows(at: [IndexPath.init(row: row, section: 0)], with: .none)
                     tableView.endUpdates()
                 }
             }
