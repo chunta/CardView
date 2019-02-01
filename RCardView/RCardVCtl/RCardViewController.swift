@@ -90,23 +90,22 @@ class RCardViewController: UIViewController {
     func injectModel(_ cardModelList:RCardModelList)
     {
         cardList = cardModelList
+        
+        for cardindex in 0 ... cardList!.content.count-1 {
+            let card:RCardModel = cardList!.content[cardindex]
+            
+            let URLRequest = NSURLRequest(url: URL(string: card.url)!)
+            
+            let imageDownloader = UIImageView.af_sharedImageDownloader
+            
+            // Clear the URLRequest from the in-memory cache
+            //imageDownloader.imageCache?.removeImageForRequest(URLRequest, withAdditionalIdentifier: nil)
+            
+            // Clear the URLRequest from the on-disk cache
+            imageDownloader.sessionManager.session.configuration.urlCache?.removeCachedResponse(for: URLRequest as URLRequest)
+        }
         self.tableView.reloadData()
     }
-    
-    /*
-    func refreshOrientation()
-    {
-        if (self.tableView != nil)
-        {
-            self.tableView.transform = CGAffineTransform.identity
-            self.tableView.frame = CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
-            let xorgin:Int = Int((self.view.bounds.size.width - self.view.bounds.size.height) / 2.0)
-            let yorgin:Int = Int((self.view.bounds.size.height - self.view.bounds.size.width) / 2.0)
-            self.tableView.frame = CGRect.init(x: xorgin, y: yorgin, width: Int(self.view.bounds.size.height), height: Int(self.view.bounds.size.width))
-            self.tableView.transform = CGAffineTransform.init(rotationAngle: CGFloat(-1*CGFloat.pi / 2))
-        }
-    }
-    */
 }
 
 extension RCardViewController: UITableViewDelegate, UITableViewDataSource
@@ -134,34 +133,37 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         
         let cell:RTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RTableViewCell") as! RTableViewCell
         cell.title.text = cardList?.content[indexPath.row].title
-        
-        /*
-        if (self.configuration.direction == .Horizontal)
-        {
-            if (cell.contentView.transform==CGAffineTransform.identity)
+
+        let str:String = cardList!.content[indexPath.row].url
+        let url:URL = URL(string:str)!
+        let closureName = { (image : DataResponse<UIImage>) -> Void in
+            let indexpath:IndexPath? = self.tableView.indexPath(for: cell) ?? nil
+            if (indexpath != nil && self.heightMap[indexpath!.row] == nil)
             {
-                let xorigin:Int = Int((cell.bounds.size.width - cell.bounds.size.height) / 2.0);
-                let yorigin:Int = Int((cell.bounds.size.height - cell.bounds.size.width) / 2.0);
-                cell.contentView.frame = CGRect.init(x: xorigin, y: yorigin, width: Int(cell.bounds.size.height), height: Int(cell.bounds.size.width))
-                cell.contentView.transform = CGAffineTransform(rotationAngle: CGFloat(CGFloat.pi/2.0));
+                self.heightMap[indexpath!.row] = image.result.value?.size
+                tableView.beginUpdates()
+                tableView.reloadRows(at: [IndexPath.init(row: indexpath!.row, section: 0)], with: .bottom)
+                tableView.endUpdates()
             }
         }
-        */
-                
-        let row:Int = indexPath.row
-        Alamofire.request((cardList?.content[indexPath.row].url)!).responseImage { response in
-            if let image = response.result.value {
-                cell.imgv.image = image
-                if (self.heightMap[row] == nil)
-                {
-                    self.heightMap[row] = image.size
-                    tableView.beginUpdates()
-                    tableView.reloadRows(at: [IndexPath.init(row: row, section: 0)], with: .none)
-                    tableView.endUpdates()
-                }
-            }
-        }
-        
+        cell.imgv.af_setImage(withURL: url, placeholderImage: nil, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: .crossDissolve(0.4), runImageTransitionIfCached: true, completion: closureName)
         return cell
     }
 }
+
+
+
+/*
+ func refreshOrientation()
+ {
+ if (self.tableView != nil)
+ {
+ self.tableView.transform = CGAffineTransform.identity
+ self.tableView.frame = CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
+ let xorgin:Int = Int((self.view.bounds.size.width - self.view.bounds.size.height) / 2.0)
+ let yorgin:Int = Int((self.view.bounds.size.height - self.view.bounds.size.width) / 2.0)
+ self.tableView.frame = CGRect.init(x: xorgin, y: yorgin, width: Int(self.view.bounds.size.height), height: Int(self.view.bounds.size.width))
+ self.tableView.transform = CGAffineTransform.init(rotationAngle: CGFloat(-1*CGFloat.pi / 2))
+ }
+ }
+ */
