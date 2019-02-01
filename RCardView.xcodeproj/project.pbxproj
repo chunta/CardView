@@ -19,6 +19,8 @@
 		ACCDF1112204333E0014FDBA /* placeholder-600x400.png in Resources */ = {isa = PBXBuildFile; fileRef = ACCDF1102204333E0014FDBA /* placeholder-600x400.png */; };
 		ACCDF113220443EA0014FDBA /* RCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDF112220443EA0014FDBA /* RCardModel.swift */; };
 		ACCDF11522044DCF0014FDBA /* RCardHorizontalVCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDF11422044DCF0014FDBA /* RCardHorizontalVCtl.swift */; };
+		ACCDF11C22044F340014FDBA /* RCardColViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDF11A22044F340014FDBA /* RCardColViewCell.swift */; };
+		ACCDF11D22044F340014FDBA /* RCardColViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCDF11B22044F340014FDBA /* RCardColViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		ACCDF1102204333E0014FDBA /* placeholder-600x400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-600x400.png"; sourceTree = "<group>"; };
 		ACCDF112220443EA0014FDBA /* RCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardModel.swift; sourceTree = "<group>"; };
 		ACCDF11422044DCF0014FDBA /* RCardHorizontalVCtl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardHorizontalVCtl.swift; sourceTree = "<group>"; };
+		ACCDF11A22044F340014FDBA /* RCardColViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardColViewCell.swift; sourceTree = "<group>"; };
+		ACCDF11B22044F340014FDBA /* RCardColViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RCardColViewCell.xib; sourceTree = "<group>"; };
 		CC7AADF50772F8D1B0FF6352 /* Pods-RCardView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCardView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCardView/Pods-RCardView.debug.xcconfig"; sourceTree = "<group>"; };
 		F499497395ABF01A7694216E /* Pods-RCardView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCardView.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCardView/Pods-RCardView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,20 +94,54 @@
 		ACB3FD932203F3B400AF04CB /* RCardView */ = {
 			isa = PBXGroup;
 			children = (
+				ACCDF11922044F070014FDBA /* RCardViewCell */,
+				ACCDF11822044EFB0014FDBA /* RCardModel */,
+				ACCDF11722044EEB0014FDBA /* RCardHorizontalVCtl */,
+				ACCDF11622044ED80014FDBA /* RCardVCtl */,
+				ACB3FD9B2203F3C000AF04CB /* Assets.xcassets */,
+				ACB3FDA02203F3C000AF04CB /* Info.plist */,
 				ACCDF1102204333E0014FDBA /* placeholder-600x400.png */,
 				ACB3FD942203F3B400AF04CB /* AppDelegate.swift */,
 				ACB3FD962203F3B400AF04CB /* ViewController.swift */,
 				ACB3FD982203F3B400AF04CB /* Main.storyboard */,
-				ACB3FD9B2203F3C000AF04CB /* Assets.xcassets */,
 				ACB3FD9D2203F3C000AF04CB /* LaunchScreen.storyboard */,
-				ACB3FDA02203F3C000AF04CB /* Info.plist */,
-				ACB3FDA62203F50200AF04CB /* RCardViewController.swift */,
-				ACCDF112220443EA0014FDBA /* RCardModel.swift */,
-				ACCDF11422044DCF0014FDBA /* RCardHorizontalVCtl.swift */,
-				ACB3FDA82204013700AF04CB /* RTableViewCell.swift */,
-				ACCDF10D220404D70014FDBA /* RTableViewCell.xib */,
 			);
 			path = RCardView;
+			sourceTree = "<group>";
+		};
+		ACCDF11622044ED80014FDBA /* RCardVCtl */ = {
+			isa = PBXGroup;
+			children = (
+				ACB3FDA62203F50200AF04CB /* RCardViewController.swift */,
+			);
+			path = RCardVCtl;
+			sourceTree = "<group>";
+		};
+		ACCDF11722044EEB0014FDBA /* RCardHorizontalVCtl */ = {
+			isa = PBXGroup;
+			children = (
+				ACCDF11422044DCF0014FDBA /* RCardHorizontalVCtl.swift */,
+			);
+			path = RCardHorizontalVCtl;
+			sourceTree = "<group>";
+		};
+		ACCDF11822044EFB0014FDBA /* RCardModel */ = {
+			isa = PBXGroup;
+			children = (
+				ACCDF112220443EA0014FDBA /* RCardModel.swift */,
+			);
+			path = RCardModel;
+			sourceTree = "<group>";
+		};
+		ACCDF11922044F070014FDBA /* RCardViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ACB3FDA82204013700AF04CB /* RTableViewCell.swift */,
+				ACCDF10D220404D70014FDBA /* RTableViewCell.xib */,
+				ACCDF11A22044F340014FDBA /* RCardColViewCell.swift */,
+				ACCDF11B22044F340014FDBA /* RCardColViewCell.xib */,
+			);
+			path = RCardViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +206,7 @@
 			files = (
 				ACB3FD9F2203F3C000AF04CB /* LaunchScreen.storyboard in Resources */,
 				ACB3FD9C2203F3C000AF04CB /* Assets.xcassets in Resources */,
+				ACCDF11D22044F340014FDBA /* RCardColViewCell.xib in Resources */,
 				ACCDF10F220404D70014FDBA /* RTableViewCell.xib in Resources */,
 				ACB3FD9A2203F3B400AF04CB /* Main.storyboard in Resources */,
 				ACCDF1112204333E0014FDBA /* placeholder-600x400.png in Resources */,
@@ -231,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACCDF113220443EA0014FDBA /* RCardModel.swift in Sources */,
+				ACCDF11C22044F340014FDBA /* RCardColViewCell.swift in Sources */,
 				ACB3FDA92204013700AF04CB /* RTableViewCell.swift in Sources */,
 				ACB3FD972203F3B400AF04CB /* ViewController.swift in Sources */,
 				ACB3FDA72203F50200AF04CB /* RCardViewController.swift in Sources */,
