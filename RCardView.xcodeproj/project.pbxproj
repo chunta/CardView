@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		838B7AFEF70BAB39E786A6BE /* Pods_RCardView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3741DE76B14117260349F59C /* Pods_RCardView.framework */; };
+		ACB3FD952203F3B400AF04CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FD942203F3B400AF04CB /* AppDelegate.swift */; };
+		ACB3FD972203F3B400AF04CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FD962203F3B400AF04CB /* ViewController.swift */; };
+		ACB3FD9A2203F3B400AF04CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB3FD982203F3B400AF04CB /* Main.storyboard */; };
+		ACB3FD9C2203F3C000AF04CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB3FD9B2203F3C000AF04CB /* Assets.xcassets */; };
+		ACB3FD9F2203F3C000AF04CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB3FD9D2203F3C000AF04CB /* LaunchScreen.storyboard */; };
+		ACB3FDA72203F50200AF04CB /* RCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FDA62203F50200AF04CB /* RCardViewController.swift */; };
+		ACB3FDA92204013700AF04CB /* RTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FDA82204013700AF04CB /* RTableViewCell.swift */; };
+		ACCDF10F220404D70014FDBA /* RTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCDF10D220404D70014FDBA /* RTableViewCell.xib */; };
+		ACCDF1112204333E0014FDBA /* placeholder-600x400.png in Resources */ = {isa = PBXBuildFile; fileRef = ACCDF1102204333E0014FDBA /* placeholder-600x400.png */; };
+		ACCDF113220443EA0014FDBA /* RCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDF112220443EA0014FDBA /* RCardModel.swift */; };
+		ACCDF11522044DCF0014FDBA /* RCardHorizontalVCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDF11422044DCF0014FDBA /* RCardHorizontalVCtl.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3741DE76B14117260349F59C /* Pods_RCardView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCardView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACB3FD912203F3B400AF04CB /* RCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACB3FD942203F3B400AF04CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ACB3FD962203F3B400AF04CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ACB3FD992203F3B400AF04CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ACB3FD9B2203F3C000AF04CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ACB3FD9E2203F3C000AF04CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ACB3FDA02203F3C000AF04CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACB3FDA62203F50200AF04CB /* RCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardViewController.swift; sourceTree = "<group>"; };
+		ACB3FDA82204013700AF04CB /* RTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTableViewCell.swift; sourceTree = "<group>"; };
+		ACCDF10D220404D70014FDBA /* RTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RTableViewCell.xib; sourceTree = "<group>"; };
+		ACCDF1102204333E0014FDBA /* placeholder-600x400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-600x400.png"; sourceTree = "<group>"; };
+		ACCDF112220443EA0014FDBA /* RCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardModel.swift; sourceTree = "<group>"; };
+		ACCDF11422044DCF0014FDBA /* RCardHorizontalVCtl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardHorizontalVCtl.swift; sourceTree = "<group>"; };
+		CC7AADF50772F8D1B0FF6352 /* Pods-RCardView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCardView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCardView/Pods-RCardView.debug.xcconfig"; sourceTree = "<group>"; };
+		F499497395ABF01A7694216E /* Pods-RCardView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCardView.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCardView/Pods-RCardView.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACB3FD8E2203F3B400AF04CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				838B7AFEF70BAB39E786A6BE /* Pods_RCardView.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		76B970001119B8A1A2F85830 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC7AADF50772F8D1B0FF6352 /* Pods-RCardView.debug.xcconfig */,
+				F499497395ABF01A7694216E /* Pods-RCardView.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		83375F87C3AFE609D72B855D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3741DE76B14117260349F59C /* Pods_RCardView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACB3FD882203F3B400AF04CB = {
+			isa = PBXGroup;
+			children = (
+				ACB3FD932203F3B400AF04CB /* RCardView */,
+				ACB3FD922203F3B400AF04CB /* Products */,
+				76B970001119B8A1A2F85830 /* Pods */,
+				83375F87C3AFE609D72B855D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ACB3FD922203F3B400AF04CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACB3FD912203F3B400AF04CB /* RCardView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACB3FD932203F3B400AF04CB /* RCardView */ = {
+			isa = PBXGroup;
+			children = (
+				ACCDF1102204333E0014FDBA /* placeholder-600x400.png */,
+				ACB3FD942203F3B400AF04CB /* AppDelegate.swift */,
+				ACB3FD962203F3B400AF04CB /* ViewController.swift */,
+				ACB3FD982203F3B400AF04CB /* Main.storyboard */,
+				ACB3FD9B2203F3C000AF04CB /* Assets.xcassets */,
+				ACB3FD9D2203F3C000AF04CB /* LaunchScreen.storyboard */,
+				ACB3FDA02203F3C000AF04CB /* Info.plist */,
+				ACB3FDA62203F50200AF04CB /* RCardViewController.swift */,
+				ACCDF112220443EA0014FDBA /* RCardModel.swift */,
+				ACCDF11422044DCF0014FDBA /* RCardHorizontalVCtl.swift */,
+				ACB3FDA82204013700AF04CB /* RTableViewCell.swift */,
+				ACCDF10D220404D70014FDBA /* RTableViewCell.xib */,
+			);
+			path = RCardView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACB3FD902203F3B400AF04CB /* RCardView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACB3FDA32203F3C000AF04CB /* Build configuration list for PBXNativeTarget "RCardView" */;
+			buildPhases = (
+				844CD07C946B02D875360637 /* [CP] Check Pods Manifest.lock */,
+				ACB3FD8D2203F3B400AF04CB /* Sources */,
+				ACB3FD8E2203F3B400AF04CB /* Frameworks */,
+				ACB3FD8F2203F3B400AF04CB /* Resources */,
+				164BA0E89A35BE884A0D7634 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RCardView;
+			productName = RCardView;
+			productReference = ACB3FD912203F3B400AF04CB /* RCardView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACB3FD892203F3B400AF04CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = nmi;
+				TargetAttributes = {
+					ACB3FD902203F3B400AF04CB = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = ACB3FD8C2203F3B400AF04CB /* Build configuration list for PBXProject "RCardView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACB3FD882203F3B400AF04CB;
+			productRefGroup = ACB3FD922203F3B400AF04CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACB3FD902203F3B400AF04CB /* RCardView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACB3FD8F2203F3B400AF04CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACB3FD9F2203F3C000AF04CB /* LaunchScreen.storyboard in Resources */,
+				ACB3FD9C2203F3C000AF04CB /* Assets.xcassets in Resources */,
+				ACCDF10F220404D70014FDBA /* RTableViewCell.xib in Resources */,
+				ACB3FD9A2203F3B400AF04CB /* Main.storyboard in Resources */,
+				ACCDF1112204333E0014FDBA /* placeholder-600x400.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		164BA0E89A35BE884A0D7634 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RCardView/Pods-RCardView-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCardView/Pods-RCardView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		844CD07C946B02D875360637 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RCardView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACB3FD8D2203F3B400AF04CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACCDF113220443EA0014FDBA /* RCardModel.swift in Sources */,
+				ACB3FDA92204013700AF04CB /* RTableViewCell.swift in Sources */,
+				ACB3FD972203F3B400AF04CB /* ViewController.swift in Sources */,
+				ACB3FDA72203F50200AF04CB /* RCardViewController.swift in Sources */,
+				ACB3FD952203F3B400AF04CB /* AppDelegate.swift in Sources */,
+				ACCDF11522044DCF0014FDBA /* RCardHorizontalVCtl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ACB3FD982203F3B400AF04CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACB3FD992203F3B400AF04CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ACB3FD9D2203F3C000AF04CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ACB3FD9E2203F3C000AF04CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ACB3FDA12203F3C000AF04CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ACB3FDA22203F3C000AF04CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ACB3FDA42203F3C000AF04CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC7AADF50772F8D1B0FF6352 /* Pods-RCardView.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NEEK5ZHF5F;
+				INFOPLIST_FILE = RCardView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledaily.RCardView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ACB3FDA52203F3C000AF04CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F499497395ABF01A7694216E /* Pods-RCardView.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NEEK5ZHF5F;
+				INFOPLIST_FILE = RCardView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledaily.RCardView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACB3FD8C2203F3B400AF04CB /* Build configuration list for PBXProject "RCardView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACB3FDA12203F3C000AF04CB /* Debug */,
+				ACB3FDA22203F3C000AF04CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACB3FDA32203F3C000AF04CB /* Build configuration list for PBXNativeTarget "RCardView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACB3FDA42203F3C000AF04CB /* Debug */,
+				ACB3FDA52203F3C000AF04CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ACB3FD892203F3B400AF04CB /* Project object */;
+}
