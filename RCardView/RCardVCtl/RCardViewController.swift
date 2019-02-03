@@ -51,6 +51,7 @@ class RCardViewController: UIViewController {
 
     private var configuration:RCardConfig!
     private var heightMap:Dictionary<Int, CGSize> = Dictionary<Int, CGSize>()
+    private var labelHeightMap:Dictionary<Int, CGFloat> = Dictionary<Int, CGFloat>()
     private var cardList:RCardModelList?
     private var tableView:UITableView!
     convenience init() {
@@ -60,10 +61,8 @@ class RCardViewController: UIViewController {
     init(configuration: RCardConfig?) {
         self.configuration = configuration
         self.tableView = UITableView(frame: CGRect.zero)
-        self.tableView.backgroundColor = UIColor.yellow
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
-        self.tableView.layer.borderWidth = 2
-
+        self.tableView.backgroundColor = UIColor.white
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -87,23 +86,24 @@ class RCardViewController: UIViewController {
         self.tableView.dataSource = self
     }
     
+    private func clearImageFromCache(mYourImageURL: String) {
+        let URL = NSURL(string: mYourImageURL)!
+        let mURLRequest = NSURLRequest(url: URL as URL)
+        _ = URLRequest(url: URL as URL, cachePolicy: URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData)
+        
+        let imageDownloader = UIImageView.af_sharedImageDownloader
+        _ = imageDownloader.imageCache?.removeImage(for: mURLRequest as URLRequest, withIdentifier: nil)
+    }
+    
     func injectModel(_ cardModelList:RCardModelList)
     {
         cardList = cardModelList
-        
+        /*
         for cardindex in 0 ... cardList!.content.count-1 {
             let card:RCardModel = cardList!.content[cardindex]
-            
-            let URLRequest = NSURLRequest(url: URL(string: card.url)!)
-            
-            let imageDownloader = UIImageView.af_sharedImageDownloader
-            
-            // Clear the URLRequest from the in-memory cache
-            //imageDownloader.imageCache?.removeImageForRequest(URLRequest, withAdditionalIdentifier: nil)
-            
-            // Clear the URLRequest from the on-disk cache
-            imageDownloader.sessionManager.session.configuration.urlCache?.removeCachedResponse(for: URLRequest as URLRequest)
+            clearImageFromCache(mYourImageURL: card.url)
         }
+        */
         self.tableView.reloadData()
     }
 }
@@ -125,7 +125,7 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         let size:CGSize = heightMap[indexPath.row]!
         let ratio:CGFloat = size.width / size.height
         let h:CGFloat = tableView.frame.width / ratio
-        let lh:CGFloat = 21
+        let lh:CGFloat = labelHeightMap[indexPath.row] ?? 0
         return h + lh
     }
     
@@ -133,7 +133,11 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         
         let cell:RTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RTableViewCell") as! RTableViewCell
         cell.title.text = cardList?.content[indexPath.row].title
-
+        cell.title.sizeToFit()
+        cell.desc.text = cardList?.content[indexPath.row].des
+        cell.desc.sizeToFit()
+        self.labelHeightMap[indexPath.row] = cell.title.bounds.size.height + cell.desc.bounds.size.height
+        
         let str:String = cardList!.content[indexPath.row].url
         let url:URL = URL(string:str)!
         let closureName = { (image : DataResponse<UIImage>) -> Void in
@@ -150,20 +154,3 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         return cell
     }
 }
-
-
-
-/*
- func refreshOrientation()
- {
- if (self.tableView != nil)
- {
- self.tableView.transform = CGAffineTransform.identity
- self.tableView.frame = CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height)
- let xorgin:Int = Int((self.view.bounds.size.width - self.view.bounds.size.height) / 2.0)
- let yorgin:Int = Int((self.view.bounds.size.height - self.view.bounds.size.width) / 2.0)
- self.tableView.frame = CGRect.init(x: xorgin, y: yorgin, width: Int(self.view.bounds.size.height), height: Int(self.view.bounds.size.width))
- self.tableView.transform = CGAffineTransform.init(rotationAngle: CGFloat(-1*CGFloat.pi / 2))
- }
- }
- */

@@ -1,5 +1,5 @@
 //
-//  RTableViewCell.swift
+//  RCardColViewCell.swift
 //  RCardView
 //
 //  Created by nmi on 2019/2/1.
@@ -7,20 +7,13 @@
 //
 
 import UIKit
-import AlamofireImage
 
-class RTableViewCell: UITableViewCell {
+class RCardColViewCell: UICollectionViewCell {
 
     @IBOutlet var title:UILabel!
     @IBOutlet var imgv:UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        imgv.layer.borderWidth = 3
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
     }
     
     override func prepareForReuse() {

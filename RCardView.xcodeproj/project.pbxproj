@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		838B7AFEF70BAB39E786A6BE /* Pods_RCardView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3741DE76B14117260349F59C /* Pods_RCardView.framework */; };
+		A8D295F6220688A6001D13D6 /* Misc.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A8D295F5220688A6001D13D6 /* Misc.rtf */; };
+		A8D295F92206E209001D13D6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D295F82206E209001D13D6 /* Extension.swift */; };
 		ACB3FD952203F3B400AF04CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FD942203F3B400AF04CB /* AppDelegate.swift */; };
 		ACB3FD972203F3B400AF04CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FD962203F3B400AF04CB /* ViewController.swift */; };
 		ACB3FD9A2203F3B400AF04CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB3FD982203F3B400AF04CB /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		3741DE76B14117260349F59C /* Pods_RCardView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCardView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8D295F5220688A6001D13D6 /* Misc.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Misc.rtf; sourceTree = "<group>"; };
+		A8D295F82206E209001D13D6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		ACB3FD912203F3B400AF04CB /* RCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB3FD942203F3B400AF04CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB3FD962203F3B400AF04CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A8D295F72206E1F6001D13D6 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A8D295F82206E209001D13D6 /* Extension.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		ACB3FD882203F3B400AF04CB = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +106,8 @@
 		ACB3FD932203F3B400AF04CB /* RCardView */ = {
 			isa = PBXGroup;
 			children = (
+				A8D295F72206E1F6001D13D6 /* Utility */,
 				ACCDF11822044EFB0014FDBA /* RCardModel */,
-				ACCDF11922044F070014FDBA /* RCardViewCell */,
 				ACCDF11722044EEB0014FDBA /* RCardHorizontalVCtl */,
 				ACCDF11622044ED80014FDBA /* RCardVCtl */,
 				ACB3FD9B2203F3C000AF04CB /* Assets.xcassets */,
@@ -105,6 +117,7 @@
 				ACB3FD962203F3B400AF04CB /* ViewController.swift */,
 				ACB3FD982203F3B400AF04CB /* Main.storyboard */,
 				ACB3FD9D2203F3C000AF04CB /* LaunchScreen.storyboard */,
+				A8D295F5220688A6001D13D6 /* Misc.rtf */,
 			);
 			path = RCardView;
 			sourceTree = "<group>";
@@ -112,6 +125,8 @@
 		ACCDF11622044ED80014FDBA /* RCardVCtl */ = {
 			isa = PBXGroup;
 			children = (
+				ACB3FDA82204013700AF04CB /* RTableViewCell.swift */,
+				ACCDF10D220404D70014FDBA /* RTableViewCell.xib */,
 				ACB3FDA62203F50200AF04CB /* RCardViewController.swift */,
 			);
 			path = RCardVCtl;
@@ -120,6 +135,8 @@
 		ACCDF11722044EEB0014FDBA /* RCardHorizontalVCtl */ = {
 			isa = PBXGroup;
 			children = (
+				ACCDF11A22044F340014FDBA /* RCardColViewCell.swift */,
+				ACCDF11B22044F340014FDBA /* RCardColViewCell.xib */,
 				ACCDF11422044DCF0014FDBA /* RCardHorizontalVCtl.swift */,
 			);
 			path = RCardHorizontalVCtl;
@@ -131,17 +148,6 @@
 				ACCDF112220443EA0014FDBA /* RCardModel.swift */,
 			);
 			path = RCardModel;
-			sourceTree = "<group>";
-		};
-		ACCDF11922044F070014FDBA /* RCardViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				ACB3FDA82204013700AF04CB /* RTableViewCell.swift */,
-				ACCDF10D220404D70014FDBA /* RTableViewCell.xib */,
-				ACCDF11A22044F340014FDBA /* RCardColViewCell.swift */,
-				ACCDF11B22044F340014FDBA /* RCardColViewCell.xib */,
-			);
-			path = RCardViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +215,7 @@
 				ACCDF11D22044F340014FDBA /* RCardColViewCell.xib in Resources */,
 				ACCDF10F220404D70014FDBA /* RTableViewCell.xib in Resources */,
 				ACB3FD9A2203F3B400AF04CB /* Main.storyboard in Resources */,
+				A8D295F6220688A6001D13D6 /* Misc.rtf in Resources */,
 				ACCDF1112204333E0014FDBA /* placeholder-600x400.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +283,7 @@
 				ACB3FDA72203F50200AF04CB /* RCardViewController.swift in Sources */,
 				ACB3FD952203F3B400AF04CB /* AppDelegate.swift in Sources */,
 				ACCDF11522044DCF0014FDBA /* RCardHorizontalVCtl.swift in Sources */,
+				A8D295F92206E209001D13D6 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

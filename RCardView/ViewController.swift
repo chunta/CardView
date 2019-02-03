@@ -17,26 +17,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let config:RCardConfig = RCardConfig()
-        //config.direction = .Horizontal
-        cardView = RCardViewController.init(configuration: config)
-        self.view.addSubview(cardView.view)
-        cardView.view.translatesAutoresizingMaskIntoConstraints = false
         let guide:UILayoutGuide = self.view.safeAreaLayoutGuide
-        NSLayoutConstraint(item: cardView.view, attribute: .leading, relatedBy: .equal, toItem: guide, attribute:.leading, multiplier: 1.0, constant: 10.0).isActive = true
-        NSLayoutConstraint(item: cardView.view, attribute: .trailing, relatedBy: .equal, toItem: guide, attribute:.trailing, multiplier: 1.0, constant: -10.0).isActive = true
-        NSLayoutConstraint(item: cardView.view, attribute: .top, relatedBy: .equal, toItem: guide, attribute: .top, multiplier: 1.0, constant: 10.0).isActive = true
-        NSLayoutConstraint(item: cardView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.9, constant: 0.0).isActive = true
         
-        /*
+        let config:RCardConfig = RCardConfig()
+        
         cardHorizontalView = RCardHorizontalVCtl.init(configuration: config)
         cardHorizontalView.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(cardHorizontalView.view)
         NSLayoutConstraint(item: cardHorizontalView.view, attribute: .leading, relatedBy: .equal, toItem: guide, attribute:.leading, multiplier: 1.0, constant: 10.0).isActive = true
         NSLayoutConstraint(item: cardHorizontalView.view, attribute: .trailing, relatedBy: .equal, toItem: guide, attribute:.trailing, multiplier: 1.0, constant: -10.0).isActive = true
-        NSLayoutConstraint(item: cardHorizontalView.view, attribute: .top, relatedBy: .equal, toItem: cardView.view, attribute: .bottom, multiplier: 1.0, constant: 10.0).isActive = true
-        NSLayoutConstraint(item: cardHorizontalView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.5, constant: 0.0).isActive = true
-        */
+        NSLayoutConstraint(item: cardHorizontalView.view, attribute: .top, relatedBy: .equal, toItem: guide, attribute: .top, multiplier: 1.0, constant: 10.0).isActive = true
+        NSLayoutConstraint(item: cardHorizontalView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.2, constant: 0.0).isActive = true
+        
+        cardView = RCardViewController.init(configuration: config)
+        self.view.addSubview(cardView.view)
+        cardView.view.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint(item: cardView.view, attribute: .leading, relatedBy: .equal, toItem: guide, attribute:.leading, multiplier: 1.0, constant: 10.0).isActive = true
+        NSLayoutConstraint(item: cardView.view, attribute: .trailing, relatedBy: .equal, toItem: guide, attribute:.trailing, multiplier: 1.0, constant: -10.0).isActive = true
+        NSLayoutConstraint(item: cardView.view, attribute: .top, relatedBy: .equal, toItem: cardHorizontalView.view, attribute: .bottom, multiplier: 1.0, constant: 10.0).isActive = true
+        NSLayoutConstraint(item: cardView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.7, constant: 0.0).isActive = true
+        
+        
         let headers: HTTPHeaders = [
             "Authorization": "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==",
             "Accept": "application/json"
@@ -46,12 +48,22 @@ class ViewController: UIViewController {
             {
                 if (response.data != nil)
                 {
-                    let str = String(data: response.data!, encoding: .utf8)!
-                    print(str)
                     let decoder = JSONDecoder()
                     let cardList:RCardModelList = try! decoder.decode(RCardModelList.self, from: response.data!)
-                    print(cardList)
                     self.cardView.injectModel(cardList)
+                }
+                
+            }
+        }
+        
+        Alamofire.request("https://dl.dropboxusercontent.com/s/iej0ijakvj12gpp/magazine2.json", headers: headers).responseJSON { response in
+            if (response.result.isSuccess)
+            {
+                if (response.data != nil)
+                {
+                    let decoder = JSONDecoder()
+                    let cardList:RCardModelList = try! decoder.decode(RCardModelList.self, from: response.data!)
+                    self.cardHorizontalView.injectModel(cardList)
                 }
                 
             }
