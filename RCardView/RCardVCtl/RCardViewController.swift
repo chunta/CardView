@@ -134,9 +134,12 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         let cell:RTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RTableViewCell") as! RTableViewCell
         cell.title.text = cardList?.content[indexPath.row].title
         cell.title.sizeToFit()
+        
         cell.desc.text = cardList?.content[indexPath.row].des
         cell.desc.sizeToFit()
-        self.labelHeightMap[indexPath.row] = cell.title.bounds.size.height + cell.desc.bounds.size.height
+        
+        self.labelHeightMap[indexPath.row] = CGFloat(ceil(Double(cell.title.bounds.size.height))) + CGFloat(ceil(Double(cell.desc.bounds.size.height)))
+        print(self.labelHeightMap[indexPath.row]!, indexPath.row )
         
         let str:String = cardList!.content[indexPath.row].url
         let url:URL = URL(string:str)!
