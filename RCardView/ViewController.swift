@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 
 class ViewController: UIViewController {
 
@@ -16,6 +17,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SDImageCache.shared().clearMemory()
+        SDImageCache.shared().clearDisk()
         
         let guide:UILayoutGuide = self.view.safeAreaLayoutGuide
         

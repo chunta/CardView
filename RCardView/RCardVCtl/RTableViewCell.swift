@@ -20,15 +20,17 @@ class RTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-//        desc.layer.borderWidth = 1
+        title.backgroundColor = UIColor.red
+        desc.backgroundColor = UIColor.red
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        imgv.af_cancelImageRequest()
+        imgv.sd_cancelCurrentImageLoad()
         imgv.image = nil
     }
+    
+    
     
     class func verticalSpace()->CGFloat
     {

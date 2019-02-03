@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import SDWebImage
 
 enum RCardLayoutDirection {
     case Vertical
@@ -126,6 +127,7 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         let ratio:CGFloat = size.width / size.height
         let h:CGFloat = tableView.frame.width / ratio
         let lh:CGFloat = labelHeightMap[indexPath.row] ?? 0
+        print("resize ", h)
         return h + lh
     }
     
@@ -143,6 +145,7 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         
         let str:String = cardList!.content[indexPath.row].url
         let url:URL = URL(string:str)!
+        /*
         let closureName = { (image : DataResponse<UIImage>) -> Void in
             let indexpath:IndexPath? = self.tableView.indexPath(for: cell) ?? nil
             if (indexpath != nil && self.heightMap[indexpath!.row] == nil)
@@ -154,6 +157,22 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
             }
         }
         cell.imgv.af_setImage(withURL: url, placeholderImage: nil, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: .crossDissolve(0.4), runImageTransitionIfCached: true, completion: closureName)
+        */
+        let row:Int = indexPath.row
+        cell.imgv.sd_setImage(with: url, placeholderImage: nil, options: .forceTransition, progress: nil) { (image, error, type, url) in
+            if (error == nil && (image != nil)){
+                
+                print(image!.size, row)
+                if (self.heightMap[row] == nil)
+                {
+                    self.heightMap[row] = image!.size
+                    tableView.beginUpdates()
+                    tableView.reloadRows(at: [IndexPath.init(row: row, section: 0)], with: .bottom)
+                    tableView.endUpdates()
+                }
+            }
+        }
+      
         return cell
     }
 }
