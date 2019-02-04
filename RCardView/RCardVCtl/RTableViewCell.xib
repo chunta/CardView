@@ -19,14 +19,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="365.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pg7-jA-8fh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="999" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pg7-jA-8fh">
+                        <rect key="frame" x="0.0" y="8" width="320" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <color key="textColor" red="0.30492232758079718" green="0.53371108940756296" blue="0.84300113341968919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jnE-XS-axK">
-                        <rect key="frame" x="0.0" y="20.5" width="320" height="323.5"/>
+                        <rect key="frame" x="0.0" y="32.5" width="320" height="311.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zGB-Ia-1K7">
                         <rect key="frame" x="0.0" y="344" width="320" height="21.5"/>
@@ -38,11 +38,11 @@
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="zGB-Ia-1K7" firstAttribute="top" secondItem="jnE-XS-axK" secondAttribute="bottom" id="9Rz-aF-YT2"/>
-                    <constraint firstItem="jnE-XS-axK" firstAttribute="top" secondItem="pg7-jA-8fh" secondAttribute="bottom" id="9cN-RE-mGQ"/>
+                    <constraint firstItem="jnE-XS-axK" firstAttribute="top" secondItem="pg7-jA-8fh" secondAttribute="bottom" constant="4" id="9cN-RE-mGQ"/>
                     <constraint firstAttribute="bottom" secondItem="zGB-Ia-1K7" secondAttribute="bottom" id="C8u-8D-cfK"/>
                     <constraint firstAttribute="trailing" secondItem="jnE-XS-axK" secondAttribute="trailing" id="FAg-9q-amm"/>
                     <constraint firstAttribute="trailing" secondItem="pg7-jA-8fh" secondAttribute="trailing" id="QD5-n6-z9o"/>
-                    <constraint firstItem="pg7-jA-8fh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="V2f-5P-V83"/>
+                    <constraint firstItem="pg7-jA-8fh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="V2f-5P-V83"/>
                     <constraint firstItem="pg7-jA-8fh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="V8H-Xz-KVR"/>
                     <constraint firstItem="jnE-XS-axK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Yff-e0-ej3"/>
                     <constraint firstAttribute="trailing" secondItem="zGB-Ia-1K7" secondAttribute="trailing" id="k4w-kv-GHv"/>

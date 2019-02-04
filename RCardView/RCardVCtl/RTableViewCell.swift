@@ -32,7 +32,7 @@ class RTableViewCell: UITableViewCell {
     
     class func verticalSpace()->CGFloat
     {
-        return 0
+        return 12
     }
 
 }

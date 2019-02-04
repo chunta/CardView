@@ -108,7 +108,7 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
             let ratio:CGFloat = 600.0/400.0
             let h:CGFloat = tableView.frame.width / ratio
             let lh:CGFloat = labelHeightMap[indexPath.row] ?? 0
-            return h + lh
+            return h + lh + RTableViewCell.verticalSpace()
             //return UITableView.automaticDimension
         }
         
@@ -117,7 +117,7 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         let h:CGFloat = tableView.frame.width / ratio
         let lh:CGFloat = labelHeightMap[indexPath.row] ?? 0
         print("resize ", h)
-        return h + lh
+        return h + lh + RTableViewCell.verticalSpace()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
