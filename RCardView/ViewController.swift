@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         
         SDImageCache.shared().clearMemory()
         SDImageCache.shared().clearDisk()
+        SDWebImageManager.shared().imageDownloader?.executionOrder = .lifoExecutionOrder
+        SDWebImageManager.shared().imageDownloader?.downloadTimeout = 40
         
         let guide:UILayoutGuide = self.view.safeAreaLayoutGuide
         

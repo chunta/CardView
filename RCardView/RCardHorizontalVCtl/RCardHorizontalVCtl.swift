@@ -103,6 +103,9 @@ extension RCardHorizontalVCtl:UICollectionViewDataSource, UICollectionViewDelega
                     self.collectionView.collectionViewLayout.invalidateLayout()
                 }
             }
+            else{
+                print(error?.localizedDescription)
+            }
         }
         return cell
     }
