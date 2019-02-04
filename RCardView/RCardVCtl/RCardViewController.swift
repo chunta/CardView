@@ -87,24 +87,9 @@ class RCardViewController: UIViewController {
         self.tableView.dataSource = self
     }
     
-    private func clearImageFromCache(mYourImageURL: String) {
-        let URL = NSURL(string: mYourImageURL)!
-        let mURLRequest = NSURLRequest(url: URL as URL)
-        _ = URLRequest(url: URL as URL, cachePolicy: URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData)
-        
-        let imageDownloader = UIImageView.af_sharedImageDownloader
-        _ = imageDownloader.imageCache?.removeImage(for: mURLRequest as URLRequest, withIdentifier: nil)
-    }
-    
     func injectModel(_ cardModelList:RCardModelList)
     {
         cardList = cardModelList
-        /*
-        for cardindex in 0 ... cardList!.content.count-1 {
-            let card:RCardModel = cardList!.content[cardindex]
-            clearImageFromCache(mYourImageURL: card.url)
-        }
-        */
         self.tableView.reloadData()
     }
 }
@@ -120,7 +105,11 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         
         if (heightMap[indexPath.row] == nil)
         {
-            return UITableView.automaticDimension
+            let ratio:CGFloat = 600.0/400.0
+            let h:CGFloat = tableView.frame.width / ratio
+            let lh:CGFloat = labelHeightMap[indexPath.row] ?? 0
+            return h + lh
+            //return UITableView.automaticDimension
         }
         
         let size:CGSize = heightMap[indexPath.row]!
@@ -134,7 +123,7 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:RTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RTableViewCell") as! RTableViewCell
-        cell.title.text = cardList?.content[indexPath.row].title
+        cell.title.text = cardList?.content[indexPath.row].title.capitalizingFirstLetter()
         cell.title.sizeToFit()
         
         cell.desc.text = cardList?.content[indexPath.row].des
@@ -145,23 +134,11 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
         
         let str:String = cardList!.content[indexPath.row].url
         let url:URL = URL(string:str)!
-        /*
-        let closureName = { (image : DataResponse<UIImage>) -> Void in
-            let indexpath:IndexPath? = self.tableView.indexPath(for: cell) ?? nil
-            if (indexpath != nil && self.heightMap[indexpath!.row] == nil)
-            {
-                self.heightMap[indexpath!.row] = image.result.value?.size
-                tableView.beginUpdates()
-                tableView.reloadRows(at: [IndexPath.init(row: indexpath!.row, section: 0)], with: .bottom)
-                tableView.endUpdates()
-            }
-        }
-        cell.imgv.af_setImage(withURL: url, placeholderImage: nil, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: .crossDissolve(0.4), runImageTransitionIfCached: true, completion: closureName)
-        */
         let row:Int = indexPath.row
-        cell.imgv.sd_setImage(with: url, placeholderImage: nil, options: .forceTransition, progress: nil) { (image, error, type, url) in
+        let placeholder:UIImage = UIImage.init(named: "placeholder-600x400")!
+        cell.imgv.sd_imageTransition = .fade
+        cell.imgv.sd_setImage(with: url, placeholderImage: placeholder, options: .forceTransition, progress: nil) { (image, error, type, url) in
             if (error == nil && (image != nil)){
-                
                 print(image!.size, row)
                 if (self.heightMap[row] == nil)
                 {

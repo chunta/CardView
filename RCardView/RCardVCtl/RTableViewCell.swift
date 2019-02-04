@@ -19,9 +19,7 @@ class RTableViewCell: UITableViewCell {
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        title.backgroundColor = UIColor.red
-        desc.backgroundColor = UIColor.red
+        super.setSelected(selected, animated: animated)        
     }
     
     override func prepareForReuse() {

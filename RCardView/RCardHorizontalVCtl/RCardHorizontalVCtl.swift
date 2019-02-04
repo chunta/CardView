@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import SDWebImage
 
 class RCardHorizontalVCtl: UIViewController {
 
@@ -53,25 +54,9 @@ class RCardHorizontalVCtl: UIViewController {
         self.collectionView.register(UINib.init(nibName: "RCardColViewCell", bundle: nil), forCellWithReuseIdentifier: "RCardColViewCell")
     }
     
-    private func clearImageFromCache(mYourImageURL: String) {
-        let URL = NSURL(string: mYourImageURL)!
-        let mURLRequest = NSURLRequest(url: URL as URL)
-        _ = URLRequest(url: URL as URL, cachePolicy: URLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData)
-        
-        let imageDownloader = UIImageView.af_sharedImageDownloader
-        _ = imageDownloader.imageCache?.removeImage(for: mURLRequest as URLRequest, withIdentifier: nil)
-    }
-    
     func injectModel(_ cardModelList:RCardModelList)
     {
         cardList = cardModelList
-        /*
-        for cardindex in 0 ... cardList!.content.count-1 {
-            let card:RCardModel = cardList!.content[cardindex]
-            
-            clearImageFromCache(mYourImageURL: card.url)
-        }
-        */
         self.collectionView.reloadData()
     }
 }
@@ -96,24 +81,29 @@ extension RCardHorizontalVCtl:UICollectionViewDataSource, UICollectionViewDelega
             let w:CGFloat = self.view.frame.size.height * ratio
             return CGSize.init(width: w, height: self.view.frame.size.height)
         }
-        return defaultSize
+        let ratio:CGFloat = 600.0/400.0
+        let w:CGFloat = self.view.frame.size.height * ratio
+        return CGSize.init(width: w, height: self.view.frame.size.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:RCardColViewCell = collectionView.dequeueReusableCell(withReuseIdentifier:"RCardColViewCell", for: indexPath) as! RCardColViewCell
-        cell.title.text = cardList!.content[indexPath.row].title
+        cell.title.text = cardList!.content[indexPath.row].title.capitalizingFirstLetter()
         let str:String = cardList!.content[indexPath.row].url
         let url:URL = URL(string:str)!
-        let row = indexPath.row
-        let closureName = { (image : DataResponse<UIImage>) -> Void in
-            if (self.heightMap[row] == nil)
-            {
-                self.heightMap[row] = image.result.value?.size
-                self.collectionView.collectionViewLayout.invalidateLayout()
+        let row:Int = indexPath.row
+        let placeholder:UIImage = UIImage.init(named: "placeholder-600x400")!
+        cell.imgv.sd_imageTransition = .fade
+        cell.imgv.sd_setImage(with: url, placeholderImage: placeholder, options: .forceTransition, progress: nil) { (image, error, type, url) in
+            if (error == nil && (image != nil)){
+                print(image!.size, row)
+                if (self.heightMap[row] == nil)
+                {
+                    self.heightMap[row] = image!.size
+                    self.collectionView.collectionViewLayout.invalidateLayout()
+                }
             }
         }
-        cell.imgv.af_setImage(withURL: url, placeholderImage: nil, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: .crossDissolve(0.4), runImageTransitionIfCached: true, completion: closureName)
-        
         return cell
     }
 }
