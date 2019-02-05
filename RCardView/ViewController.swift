@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         SDImageCache.shared().clearMemory()
         SDImageCache.shared().clearDisk()
         SDWebImageManager.shared().imageDownloader?.executionOrder = .lifoExecutionOrder

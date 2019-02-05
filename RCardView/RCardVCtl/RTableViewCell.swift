@@ -28,11 +28,9 @@ class RTableViewCell: UITableViewCell {
         imgv.image = nil
     }
     
-    
-    
     class func verticalSpace()->CGFloat
     {
-        return 12
+        return 30
     }
 
 }

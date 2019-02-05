@@ -61,9 +61,10 @@ class RCardViewController: UIViewController {
 
     init(configuration: RCardConfig?) {
         self.configuration = configuration
-        self.tableView = UITableView(frame: CGRect.zero)
+        self.tableView = UITableView.init(frame: CGRect.zero, style: .grouped) // UITableView(frame: CGRect.zero, style)
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.backgroundColor = UIColor.white
+        self.tableView.separatorStyle = .none
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -85,6 +86,7 @@ class RCardViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.delegate = self
         self.tableView.dataSource = self
+    
     }
     
     func injectModel(_ cardModelList:RCardModelList)
@@ -96,26 +98,29 @@ class RCardViewController: UIViewController {
 
 extension RCardViewController: UITableViewDelegate, UITableViewDataSource
 {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return cardList?.content.count ?? 0
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cardList?.content.count ?? 0
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        if (heightMap[indexPath.row] == nil)
+        if (heightMap[indexPath.section] == nil)
         {
             let ratio:CGFloat = 600.0/400.0
             let h:CGFloat = tableView.frame.width / ratio
-            let lh:CGFloat = labelHeightMap[indexPath.row] ?? 0
+            let lh:CGFloat = labelHeightMap[indexPath.section] ?? 0
             return h + lh + RTableViewCell.verticalSpace()
             //return UITableView.automaticDimension
         }
         
-        let size:CGSize = heightMap[indexPath.row]!
+        let size:CGSize = heightMap[indexPath.section]!
         let ratio:CGFloat = size.width / size.height
         let h:CGFloat = tableView.frame.width / ratio
-        let lh:CGFloat = labelHeightMap[indexPath.row] ?? 0
+        let lh:CGFloat = labelHeightMap[indexPath.section] ?? 0
         print("resize ", h)
         return h + lh + RTableViewCell.verticalSpace()
     }
@@ -123,28 +128,31 @@ extension RCardViewController: UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:RTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RTableViewCell") as! RTableViewCell
-        cell.title.text = cardList?.content[indexPath.row].title.capitalizingFirstLetter()
+        cell.title.text = cardList?.content[indexPath.section].title.capitalizingFirstLetter()
         cell.title.sizeToFit()
         
-        cell.desc.text = cardList?.content[indexPath.row].des
+        cell.desc.text = cardList?.content[indexPath.section].des
         cell.desc.sizeToFit()
         
-        self.labelHeightMap[indexPath.row] = CGFloat(ceil(Double(cell.title.bounds.size.height))) + CGFloat(ceil(Double(cell.desc.bounds.size.height)))
-        print(self.labelHeightMap[indexPath.row]!, indexPath.row )
+        cell.layer.borderColor = UIColor.init(displayP3Red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 6
         
-        let str:String = cardList!.content[indexPath.row].url
+        self.labelHeightMap[indexPath.section] = CGFloat(ceil(Double(cell.title.bounds.size.height))) + CGFloat(ceil(Double(cell.desc.bounds.size.height)))
+       
+        let str:String = cardList!.content[indexPath.section].url
         let url:URL = URL(string:str)!
-        let row:Int = indexPath.row
+        let section:Int = indexPath.section
         let placeholder:UIImage = UIImage.init(named: "placeholder-600x400")!
         cell.imgv.sd_imageTransition = .fade
         cell.imgv.sd_setImage(with: url, placeholderImage: placeholder, options: .forceTransition, progress: nil) { (image, error, type, url) in
             if (error == nil && (image != nil)){
-                print(image!.size, row)
-                if (self.heightMap[row] == nil)
+                print(image!.size, section)
+                if (self.heightMap[section] == nil)
                 {
-                    self.heightMap[row] = image!.size
+                    self.heightMap[section] = image!.size
                     tableView.beginUpdates()
-                    tableView.reloadRows(at: [IndexPath.init(row: row, section: 0)], with: .bottom)
+                    tableView.reloadRows(at: [IndexPath.init(row: 0, section: section)], with: .bottom)
                     tableView.endUpdates()
                 }
             }
