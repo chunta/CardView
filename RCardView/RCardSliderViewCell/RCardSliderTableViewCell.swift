@@ -97,6 +97,15 @@ class RCardSliderTableViewCell: UITableViewCell {
                vv.layer.borderColor = UIColor.purple.cgColor
                vv.backgroundColor = UIColor.white
                vv.frame = CGRect(x: (i-1)*Int(duview.frame.size.width), y: 0, width: Int(duview.frame.size.width), height: Int(duview.frame.size.height))
+               
+               var rect:CGRect = CGRect(x: 0, y: 0, width: Int(duview.frame.size.width), height: Int(duview.frame.size.height))
+               rect = rect.insetBy(dx: 20, dy: 30)
+               let txt:UILabel = UILabel.init(frame: rect)
+               txt.text = String(format: "%d", i)
+               txt.layer.borderWidth = 1
+               txt.textAlignment = .center
+               vv.addSubview(txt)
+                
                duview.addSubview(vv)
             }
             
@@ -174,6 +183,11 @@ class RCardSliderTableViewCell: UITableViewCell {
             if (displayCount == 0){
                 layoutbeingreset = true
             }
+            
+            // scroll innerview
+            let x:Int = Int(self.sclView.bounds.size.width) * displayCount
+            let rect:CGRect = CGRect(x: x, y: 0, width: Int(self.sclView.bounds.size.width), height: Int(self.sclView.bounds.size.height))
+            self.sclView.scrollRectToVisible(rect, animated: true)
         }
     }
     
