@@ -11,65 +11,40 @@ import Alamofire
 import AlamofireImage
 import SDWebImage
 
-enum RCardLayoutDirection {
-    case Vertical
-    case Horizontal
-}
-
-enum RCardLeftTitleVerticalGap {
-    case GapDefault
-    case GapSmall
-    case GapMedium
-    case GapLarge
-}
-
-enum RCardLeftTitleHorizontalGap {
-    case GapDefault
-    case GapSmall
-    case GapMedium
-    case GapLarge
-}
-
-enum RCardSwipeAnimation {
-    case None
-    case ShrinkToBig
-}
-
-struct RCardConfig
-{
-    var direction:RCardLayoutDirection = .Vertical
-    var lefttitleVerGap:RCardLeftTitleVerticalGap = .GapDefault
-    var lefttitleHorGap:RCardLeftTitleHorizontalGap = .GapDefault
-    var fullscreenImage:Bool = false
-    var swipeAnimation:RCardSwipeAnimation = .None
-}
-
 protocol RCardViewControllerDelegate {
     func didSelectCellAtIndex(index:Int)
 }
 
 class RCardViewController: UIViewController {
 
-    private var configuration:RCardConfig!
     private var heightMap:Dictionary<Int, CGSize> = Dictionary<Int, CGSize>()
     private var labelHeightMap:Dictionary<Int, CGFloat> = Dictionary<Int, CGFloat>()
     private var cardList:RCardModelList?
     private var tableView:UITableView!
+    /*
     convenience init() {
         self.init(configuration: nil)
     }
 
-    init(configuration: RCardConfig?) {
-        self.configuration = configuration
+    init() {
         self.tableView = UITableView.init(frame: CGRect.zero, style: .grouped) // UITableView(frame: CGRect.zero, style)
         self.tableView.translatesAutoresizingMaskIntoConstraints = false
         self.tableView.backgroundColor = UIColor.white
         self.tableView.separatorStyle = .none
         super.init(nibName: nil, bundle: nil)
     }
+    */
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    init() {
+        self.tableView = UITableView.init(frame: CGRect.zero, style: .grouped) // UITableView(frame: CGRect.zero, style)
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        self.tableView.backgroundColor = UIColor.white
+        self.tableView.separatorStyle = .none
+        super.init(nibName: nil, bundle: nil)
     }
     
     override func viewDidLoad() {

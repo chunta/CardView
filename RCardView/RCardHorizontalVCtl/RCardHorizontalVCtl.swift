@@ -14,17 +14,12 @@ import SDWebImage
 class RCardHorizontalVCtl: UIViewController {
 
     private var collectionView:UICollectionView!
-    private var configuration:RCardConfig!
     private var heightMap:Dictionary<Int, CGSize> = Dictionary<Int, CGSize>()
     private var cardList:RCardModelList?
     private var src:[Int] = [1,2,3,4,5,6]
     private var defaultSize:CGSize = CGSize.init(width: 10, height: 10)
-    convenience init() {
-        self.init(configuration: nil)
-    }
-    
-    init(configuration: RCardConfig?) {
-        self.configuration = configuration
+
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     

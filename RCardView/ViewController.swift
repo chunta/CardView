@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     var cardView:RCardViewController!
     var cardHorizontalView:RCardHorizontalVCtl!
-    
+    var cardSliderSample:RCardSliderSampleVCtl!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,9 +26,7 @@ class ViewController: UIViewController {
         
         let guide:UILayoutGuide = self.view.safeAreaLayoutGuide
         
-        let config:RCardConfig = RCardConfig()
-        
-        cardHorizontalView = RCardHorizontalVCtl.init(configuration: config)
+        cardHorizontalView = RCardHorizontalVCtl.init()
         cardHorizontalView.view.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(cardHorizontalView.view)
         NSLayoutConstraint(item: cardHorizontalView.view, attribute: .leading, relatedBy: .equal, toItem: guide, attribute:.leading, multiplier: 1.0, constant: 10.0).isActive = true
@@ -36,14 +34,24 @@ class ViewController: UIViewController {
         NSLayoutConstraint(item: cardHorizontalView.view, attribute: .top, relatedBy: .equal, toItem: guide, attribute: .top, multiplier: 1.0, constant: 10.0).isActive = true
         NSLayoutConstraint(item: cardHorizontalView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.2, constant: 0.0).isActive = true
         
-        cardView = RCardViewController.init(configuration: config)
+        cardView = RCardViewController.init()
         self.view.addSubview(cardView.view)
+        cardView.view.layer.borderWidth = 2
         cardView.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint(item: cardView.view, attribute: .leading, relatedBy: .equal, toItem: guide, attribute:.leading, multiplier: 1.0, constant: 10.0).isActive = true
         NSLayoutConstraint(item: cardView.view, attribute: .trailing, relatedBy: .equal, toItem: guide, attribute:.trailing, multiplier: 1.0, constant: -10.0).isActive = true
         NSLayoutConstraint(item: cardView.view, attribute: .top, relatedBy: .equal, toItem: cardHorizontalView.view, attribute: .bottom, multiplier: 1.0, constant: 10.0).isActive = true
-        NSLayoutConstraint(item: cardView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.7, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: cardView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.4, constant: 0.0).isActive = true
+        
+        cardSliderSample = RCardSliderSampleVCtl.init()
+        self.view.addSubview(cardSliderSample.view)
+        cardSliderSample.view.translatesAutoresizingMaskIntoConstraints = false
+        cardSliderSample.view.backgroundColor = UIColor.red
+        NSLayoutConstraint(item: cardSliderSample.view, attribute: .leading, relatedBy: .equal, toItem: guide, attribute:.leading, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: cardSliderSample.view, attribute: .trailing, relatedBy: .equal, toItem: guide, attribute:.trailing, multiplier: 1.0, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: cardSliderSample.view, attribute: .top, relatedBy: .equal, toItem: cardView.view, attribute: .bottom, multiplier: 1.0, constant: 10.0).isActive = true
+        NSLayoutConstraint(item: cardSliderSample.view, attribute: .bottom, relatedBy: .equal, toItem: guide, attribute: .bottom, multiplier: 1.0, constant: -10.0).isActive = true
         
         
         let headers: HTTPHeaders = [
@@ -75,6 +83,7 @@ class ViewController: UIViewController {
                 
             }
         }
+ 
         //---------------------
     }
 

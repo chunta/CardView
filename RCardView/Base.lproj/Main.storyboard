@@ -17,14 +17,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="cgB-Fm-Tx3">
+                                <rect key="frame" x="0.0" y="64" width="375" height="500"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oPp-Oa-cDv">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
+                                        <color key="backgroundColor" red="1" green="0.029831843470000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZcB-w5-g9g">
+                                        <rect key="frame" x="0.0" y="171" width="375" height="158"/>
+                                        <color key="backgroundColor" red="0.55538504460000004" green="0.62406831929999995" blue="0.37813248310000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sCh-Oe-DcV">
+                                        <rect key="frame" x="0.0" y="342" width="375" height="158"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.47572544639999997" blue="0.94852120539999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="Bhe-3V-1gg"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zti-OV-lPg">
+                                <rect key="frame" x="164.5" y="350.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35686274509999999" green="0.76470588240000004" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zti-OV-lPg" firstAttribute="centerY" secondItem="ahx-jf-1Ch" secondAttribute="centerY" id="IK2-u2-gIa"/>
+                            <constraint firstItem="cgB-Fm-Tx3" firstAttribute="leading" secondItem="ahx-jf-1Ch" secondAttribute="leading" id="MXA-Ze-fjd"/>
+                            <constraint firstItem="cgB-Fm-Tx3" firstAttribute="top" secondItem="ahx-jf-1Ch" secondAttribute="top" id="TUI-0W-Yar"/>
+                            <constraint firstItem="ahx-jf-1Ch" firstAttribute="trailing" secondItem="cgB-Fm-Tx3" secondAttribute="trailing" id="YW6-iw-eFC"/>
+                            <constraint firstItem="zti-OV-lPg" firstAttribute="centerX" secondItem="ahx-jf-1Ch" secondAttribute="centerX" id="g2k-bs-1hN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ahx-jf-1Ch"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jh8-Ta-xTh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="319" y="181"/>
+            <point key="canvasLocation" x="317.60000000000002" y="180.35982008995504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1Ek-Ac-T2C">

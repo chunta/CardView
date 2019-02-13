@@ -17,6 +17,9 @@
 		ACB3FD9F2203F3C000AF04CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB3FD9D2203F3C000AF04CB /* LaunchScreen.storyboard */; };
 		ACB3FDA72203F50200AF04CB /* RCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FDA62203F50200AF04CB /* RCardViewController.swift */; };
 		ACB3FDA92204013700AF04CB /* RTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FDA82204013700AF04CB /* RTableViewCell.swift */; };
+		ACBE36C02212A4F200758EE7 /* RCardSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE36BE2212A4F200758EE7 /* RCardSliderTableViewCell.swift */; };
+		ACBE36C12212A4F200758EE7 /* RCardSliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACBE36BF2212A4F200758EE7 /* RCardSliderTableViewCell.xib */; };
+		ACBE36C42212A9E800758EE7 /* RCardSliderSampleVCtl.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBE36C32212A9E800758EE7 /* RCardSliderSampleVCtl.swift */; };
 		ACCDF10F220404D70014FDBA /* RTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCDF10D220404D70014FDBA /* RTableViewCell.xib */; };
 		ACCDF1112204333E0014FDBA /* placeholder-600x400.png in Resources */ = {isa = PBXBuildFile; fileRef = ACCDF1102204333E0014FDBA /* placeholder-600x400.png */; };
 		ACCDF113220443EA0014FDBA /* RCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACCDF112220443EA0014FDBA /* RCardModel.swift */; };
@@ -38,6 +41,9 @@
 		ACB3FDA02203F3C000AF04CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACB3FDA62203F50200AF04CB /* RCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardViewController.swift; sourceTree = "<group>"; };
 		ACB3FDA82204013700AF04CB /* RTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTableViewCell.swift; sourceTree = "<group>"; };
+		ACBE36BE2212A4F200758EE7 /* RCardSliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardSliderTableViewCell.swift; sourceTree = "<group>"; };
+		ACBE36BF2212A4F200758EE7 /* RCardSliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RCardSliderTableViewCell.xib; sourceTree = "<group>"; };
+		ACBE36C32212A9E800758EE7 /* RCardSliderSampleVCtl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardSliderSampleVCtl.swift; sourceTree = "<group>"; };
 		ACCDF10D220404D70014FDBA /* RTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RTableViewCell.xib; sourceTree = "<group>"; };
 		ACCDF1102204333E0014FDBA /* placeholder-600x400.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-600x400.png"; sourceTree = "<group>"; };
 		ACCDF112220443EA0014FDBA /* RCardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardModel.swift; sourceTree = "<group>"; };
@@ -110,6 +116,8 @@
 				ACCDF11822044EFB0014FDBA /* RCardModel */,
 				ACCDF11722044EEB0014FDBA /* RCardHorizontalVCtl */,
 				ACCDF11622044ED80014FDBA /* RCardVCtl */,
+				ACBE36BD2212A31700758EE7 /* RCardSliderViewCell */,
+				ACBE36C22212A9A300758EE7 /* RCardSliderViewSample */,
 				ACB3FD9B2203F3C000AF04CB /* Assets.xcassets */,
 				ACB3FDA02203F3C000AF04CB /* Info.plist */,
 				ACCDF1102204333E0014FDBA /* placeholder-600x400.png */,
@@ -120,6 +128,23 @@
 				A8D295F5220688A6001D13D6 /* Misc.rtf */,
 			);
 			path = RCardView;
+			sourceTree = "<group>";
+		};
+		ACBE36BD2212A31700758EE7 /* RCardSliderViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				ACBE36BE2212A4F200758EE7 /* RCardSliderTableViewCell.swift */,
+				ACBE36BF2212A4F200758EE7 /* RCardSliderTableViewCell.xib */,
+			);
+			path = RCardSliderViewCell;
+			sourceTree = "<group>";
+		};
+		ACBE36C22212A9A300758EE7 /* RCardSliderViewSample */ = {
+			isa = PBXGroup;
+			children = (
+				ACBE36C32212A9E800758EE7 /* RCardSliderSampleVCtl.swift */,
+			);
+			path = RCardSliderViewSample;
 			sourceTree = "<group>";
 		};
 		ACCDF11622044ED80014FDBA /* RCardVCtl */ = {
@@ -217,6 +242,7 @@
 				ACB3FD9A2203F3B400AF04CB /* Main.storyboard in Resources */,
 				A8D295F6220688A6001D13D6 /* Misc.rtf in Resources */,
 				ACCDF1112204333E0014FDBA /* placeholder-600x400.png in Resources */,
+				ACBE36C12212A4F200758EE7 /* RCardSliderTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +309,8 @@
 				ACB3FDA92204013700AF04CB /* RTableViewCell.swift in Sources */,
 				ACB3FD972203F3B400AF04CB /* ViewController.swift in Sources */,
 				ACB3FDA72203F50200AF04CB /* RCardViewController.swift in Sources */,
+				ACBE36C02212A4F200758EE7 /* RCardSliderTableViewCell.swift in Sources */,
+				ACBE36C42212A9E800758EE7 /* RCardSliderSampleVCtl.swift in Sources */,
 				ACB3FD952203F3B400AF04CB /* AppDelegate.swift in Sources */,
 				ACCDF11522044DCF0014FDBA /* RCardHorizontalVCtl.swift in Sources */,
 				A8D295F92206E209001D13D6 /* Extension.swift in Sources */,
@@ -433,17 +461,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = NEEK5ZHF5F;
 				INFOPLIST_FILE = RCardView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appledaily.devtest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ForDeveloperTest;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -455,17 +483,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = NEEK5ZHF5F;
 				INFOPLIST_FILE = RCardView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.appledaily.devtest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ForDeveloperTest;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
