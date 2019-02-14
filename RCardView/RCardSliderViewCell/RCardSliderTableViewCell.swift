@@ -23,6 +23,7 @@ struct RCardSliderConfig {
     let indicator_height:Int
     let indicator_slideduration:Double
     let indicator_resetdelay:Double
+    let indicator_interruptable:Bool
 }
 
 class RCardSliderTableViewCell: UITableViewCell {
@@ -40,6 +41,7 @@ class RCardSliderTableViewCell: UITableViewCell {
     private var displayCount:Int = 0
     private var displayDuration:Double = 1.0
     private var displayPreView:UIView?
+    private var interrupted:Bool = false
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor.clear
@@ -51,20 +53,12 @@ class RCardSliderTableViewCell: UITableViewCell {
     
     override func prepareForReuse(){
         super.prepareForReuse()
+        
+        interrupted = false
         if (self.displayLink != nil){
             if (layoutscl) {
-                displayTime = CACurrentMediaTime()
-                displayCount = 0
                 resetIndicatorWidth()
             }
-        }
-    }
-    
-    private func resetIndicatorWidth(){
-        displayPreView = nil
-        for i in 0 ..< tabIndicatorList.count{
-            let vv:UIView = tabIndicatorList[i]
-            vv.frame = CGRect(x: vv.frame.origin.x, y: vv.frame.origin.y, width: 0, height: vv.frame.size.height)
         }
     }
     
@@ -89,23 +83,39 @@ class RCardSliderTableViewCell: UITableViewCell {
             duview.backgroundColor = UIColor.red
             sclView.addSubview(duview)
             sclView.contentSize = CGRect(x: 0, y: 0, width: Int(self.src.count) * Int(duview.frame.size.width), height: Int(duview.frame.size.height)).size
+            sclView.delegate = self
+            sclView.showsHorizontalScrollIndicator = false
+            sclView.decelerationRate = .fast
             
              // Inner view
             for i in 1...Int(self.src.count){
                let vv:UIView = UIView.init()
-               vv.layer.borderWidth = 1
-               vv.layer.borderColor = UIColor.purple.cgColor
                vv.backgroundColor = UIColor.white
                vv.frame = CGRect(x: (i-1)*Int(duview.frame.size.width), y: 0, width: Int(duview.frame.size.width), height: Int(duview.frame.size.height))
-               
-               var rect:CGRect = CGRect(x: 0, y: 0, width: Int(duview.frame.size.width), height: Int(duview.frame.size.height))
-               rect = rect.insetBy(dx: 20, dy: 30)
-               let txt:UILabel = UILabel.init(frame: rect)
-               txt.text = String(format: "%d", i)
-               txt.layer.borderWidth = 1
-               txt.textAlignment = .center
-               vv.addSubview(txt)
                 
+               let rect:CGRect = CGRect(x: 0, y: 0, width: Int(duview.frame.size.width), height: Int(duview.frame.size.height))
+               let url:URL = URL(string:self.src[i-1].url)!
+               let img:UIImageView = UIImageView.init(frame: rect)
+               img.sd_imageTransition = .fade
+               img.contentMode = .scaleAspectFill
+               img.sd_setImage(with: url, placeholderImage: nil, options: .forceTransition, progress: nil) { (image, error, type, url) in
+                    if (error == nil && (image != nil)){
+                       
+                    }
+               }
+               vv.addSubview(img)
+                
+               var txtrect:CGRect = CGRect(x: 0, y: 10, width: Int(duview.frame.size.width), height: Int(duview.frame.size.height*0.14))
+               txtrect = txtrect.insetBy(dx: 10, dy: 0)
+               let txt:UILabel = UILabel.init(frame: txtrect)
+               txt.text = self.src[i-1].title
+               txt.numberOfLines = 2
+               txt.layer.borderWidth = 0
+               txt.textAlignment = .left
+               txt.textColor = UIColor.white
+               txt.sizeToFit()
+               vv.addSubview(txt)
+
                duview.addSubview(vv)
             }
             
@@ -157,10 +167,13 @@ class RCardSliderTableViewCell: UITableViewCell {
     
     @objc func update(){
         
+        if (interrupted) {
+            return
+        }
+        
         let def:Double = CACurrentMediaTime()-displayTime
         if (def <= self.displayDuration && layoutbeingreset==false){
             let ratio:CGFloat = CGFloat(def) / CGFloat(displayDuration)
-            print("ratio ", ratio)
             let theview:UIView = tabIndicatorList[displayCount]
             theview.frame = CGRect(x: theview.frame.origin.x, y: theview.frame.origin.y,
                                    width: CGFloat(tabWidth) * ratio, height: theview.frame.size.height)
@@ -175,19 +188,15 @@ class RCardSliderTableViewCell: UITableViewCell {
         else{
             if (displayPreView != nil){
                 displayPreView!.frame = CGRect(x: displayPreView!.frame.origin.x, y: displayPreView!.frame.origin.y,
-                                     width: CGFloat(tabWidth) * 1, height: displayPreView!.frame.size.height)
+                                     width: CGFloat(tabWidth), height: displayPreView!.frame.size.height)
             }
             displayCount = (displayCount+1)%self.src.count
-            print("displayC ",displayCount)
             displayTime = CACurrentMediaTime()
             if (displayCount == 0){
                 layoutbeingreset = true
+            }else{
+                scrollViewScrollByIndex(displayCount, true)
             }
-            
-            // scroll innerview
-            let x:Int = Int(self.sclView.bounds.size.width) * displayCount
-            let rect:CGRect = CGRect(x: x, y: 0, width: Int(self.sclView.bounds.size.width), height: Int(self.sclView.bounds.size.height))
-            self.sclView.scrollRectToVisible(rect, animated: true)
         }
     }
     
@@ -196,4 +205,57 @@ class RCardSliderTableViewCell: UITableViewCell {
         self.config = config
     }
     
+    private func resetIndicatorWidth(){
+        displayPreView = nil
+        displayTime = CACurrentMediaTime()
+        displayCount = 0
+        for i in 0 ..< tabIndicatorList.count{
+            let vv:UIView = tabIndicatorList[i]
+            vv.frame = CGRect(x: vv.frame.origin.x, y: vv.frame.origin.y, width: 0, height: vv.frame.size.height)
+        }
+        scrollViewScrollByIndex(0, true)
+    }
+    
+    private func snapInnerView(){
+        let offsetx:CGFloat = CGFloat(self.sclView.contentOffset.x)
+        let findex:CGFloat = offsetx / self.sclView.frame.size.width
+        let index:Int = Int(roundf(Float(findex)))
+        scrollViewScrollByIndex(index, true)
+        
+        for i in 0 ..< tabIndicatorList.count{
+            let vv:UIView = tabIndicatorList[i]
+            vv.frame = CGRect(x: vv.frame.origin.x, y: vv.frame.origin.y, width: 0, height: vv.frame.size.height)
+        }
+        
+        for i in 0 ... index{
+            let vv:UIView = tabIndicatorList[i]
+            vv.frame = CGRect(x: vv.frame.origin.x, y: vv.frame.origin.y, width: CGFloat(self.tabWidth), height: vv.frame.size.height)
+        }
+    }
+    
+    private func scrollViewScrollByIndex(_ index:Int, _ animated:Bool){
+        let x:Int = Int(self.sclView.bounds.size.width) * index
+        let rect:CGRect = CGRect(x: x, y: 0, width: Int(self.sclView.bounds.size.width), height: Int(self.sclView.bounds.size.height))
+        self.sclView.scrollRectToVisible(rect, animated: animated)
+    }
+    
+}
+
+extension RCardSliderTableViewCell: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        print("begin dragging")
+        if (self.config.indicator_interruptable){
+            interrupted = true
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("end decelerating...")
+        snapInnerView()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        print("end dragging~~~")
+        snapInnerView()
+    }
 }

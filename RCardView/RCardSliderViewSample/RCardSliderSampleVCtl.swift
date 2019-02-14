@@ -46,7 +46,7 @@ extension RCardSliderSampleVCtl: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -56,10 +56,14 @@ extension RCardSliderSampleVCtl: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:RCardSliderTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RCardSliderTableViewCell") as! RCardSliderTableViewCell
         
-        let src:[RCardSliderData] = [ RCardSliderData.init(title: "134", des: "Hello World", url: "http://abc.com"),
-                                      RCardSliderData.init(title: "567", des: "Hello Friend", url: "http://abc.com"),
-                                      RCardSliderData.init(title: "900", des: "Hello Miss", url: "http://abc.com")]
-        let conf:RCardSliderConfig = RCardSliderConfig.init(indicator_gap: 6, indicator_botmargin: 20, indicator_rlmargin: 20, indicator_color: UIColor.purple, indicator_cornerradius: 5, indicator_height: 10, indicator_slideduration:2, indicator_resetdelay: 0.14)
+        let src:[RCardSliderData] = [ RCardSliderData.init(title: "The Untold Secret To Mastering ALITA In Just 3 Days.3 Simple Tips For Using ALITA To Get Ahead Your Competition", des: "Hello World", url: "https://dl.dropboxusercontent.com/s/pue5p4tkw0f3xq1/haifsa-rafique-110898-unsplash-small.jpg"),
+                                      RCardSliderData.init(title: "Why My ALITA Is Better Than Yours", des: "Hello Friend", url: "https://dl.dropboxusercontent.com/s/r1blgs7eue99y5x/on-the-road-6-1384796.jpg"),
+                                      RCardSliderData.init(title: "How To Earn $398/Day Using ALITA", des: "Hello Miss", url: "https://dl.dropboxusercontent.com/s/kalnied3mo0bu2k/pickupimage.jpg")]
+        let conf:RCardSliderConfig = RCardSliderConfig.init(indicator_gap: 6, indicator_botmargin: 20,
+                                                            indicator_rlmargin: 20, indicator_color: UIColor.white,
+                                                            indicator_cornerradius: 3, indicator_height: 6,
+                                                            indicator_slideduration: 4, indicator_resetdelay: 0.7,
+                                                            indicator_interruptable: true)
         cell.injectSrc(src, conf)
         cell.layer.borderWidth = 1
         return cell
