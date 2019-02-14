@@ -7,4 +7,5 @@ target 'RCardView' do
     pod 'Alamofire'
     pod 'AlamofireImage'
     pod 'SDWebImage'
+    pod 'CardSlidingView'
 end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CardSlidingView
 
 class RCardSliderSampleVCtl: UIViewController {
 
@@ -46,7 +47,7 @@ extension RCardSliderSampleVCtl: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 10
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -59,12 +60,14 @@ extension RCardSliderSampleVCtl: UITableViewDelegate, UITableViewDataSource {
         let src:[RCardSliderData] = [ RCardSliderData.init(title: "The Untold Secret To Mastering ALITA In Just 3 Days.3 Simple Tips For Using ALITA To Get Ahead Your Competition", des: "Hello World", url: "https://dl.dropboxusercontent.com/s/pue5p4tkw0f3xq1/haifsa-rafique-110898-unsplash-small.jpg"),
                                       RCardSliderData.init(title: "Why My ALITA Is Better Than Yours", des: "Hello Friend", url: "https://dl.dropboxusercontent.com/s/r1blgs7eue99y5x/on-the-road-6-1384796.jpg"),
                                       RCardSliderData.init(title: "How To Earn $398/Day Using ALITA", des: "Hello Miss", url: "https://dl.dropboxusercontent.com/s/kalnied3mo0bu2k/pickupimage.jpg")]
-        let conf:RCardSliderConfig = RCardSliderConfig.init(indicator_gap: 6, indicator_botmargin: 20,
-                                                            indicator_rlmargin: 20, indicator_color: UIColor.white,
-                                                            indicator_cornerradius: 3, indicator_height: 6,
-                                                            indicator_slideduration: 4, indicator_resetdelay: 0.7,
-                                                            indicator_interruptable: true)
+        let conf:RCardSliderConfig = RCardSliderConfig.init(gap: 6, botmargin: 20,
+                                                            rlmargin: 20, color: UIColor.white,
+                                                            cornerradius: 3, height: 6,
+                                                            slideduration: 4, resetdelay: 0.7,
+                                                            interruptable: true)
         cell.injectSrc(src, conf)
+ 
+ 
         cell.layer.borderWidth = 1
         return cell
     }

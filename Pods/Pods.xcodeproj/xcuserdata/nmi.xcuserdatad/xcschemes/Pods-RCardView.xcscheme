@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3F923C4F3FFA9BD027BCD3A1DF04B7CD"
+               BlueprintIdentifier = "06D7DD739DC4E94A33D6803C0E7529FD"
                BuildableName = "Pods_RCardView.framework"
                BlueprintName = "Pods-RCardView"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3F923C4F3FFA9BD027BCD3A1DF04B7CD"
+            BlueprintIdentifier = "06D7DD739DC4E94A33D6803C0E7529FD"
             BuildableName = "Pods_RCardView.framework"
             BlueprintName = "Pods-RCardView"
             ReferencedContainer = "container:Pods.xcodeproj">
