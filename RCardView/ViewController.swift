@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         NSLayoutConstraint(item: cardHorizontalView.view, attribute: .leading, relatedBy: .equal, toItem: guide, attribute:.leading, multiplier: 1.0, constant: 10.0).isActive = true
         NSLayoutConstraint(item: cardHorizontalView.view, attribute: .trailing, relatedBy: .equal, toItem: guide, attribute:.trailing, multiplier: 1.0, constant: -10.0).isActive = true
         NSLayoutConstraint(item: cardHorizontalView.view, attribute: .top, relatedBy: .equal, toItem: guide, attribute: .top, multiplier: 1.0, constant: 10.0).isActive = true
-        NSLayoutConstraint(item: cardHorizontalView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.2, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: cardHorizontalView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.11, constant: 0.0).isActive = true
         
         cardView = RCardViewController.init()
         self.view.addSubview(cardView.view)
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         NSLayoutConstraint(item: cardView.view, attribute: .leading, relatedBy: .equal, toItem: guide, attribute:.leading, multiplier: 1.0, constant: 10.0).isActive = true
         NSLayoutConstraint(item: cardView.view, attribute: .trailing, relatedBy: .equal, toItem: guide, attribute:.trailing, multiplier: 1.0, constant: -10.0).isActive = true
         NSLayoutConstraint(item: cardView.view, attribute: .top, relatedBy: .equal, toItem: cardHorizontalView.view, attribute: .bottom, multiplier: 1.0, constant: 10.0).isActive = true
-        NSLayoutConstraint(item: cardView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.4, constant: 0.0).isActive = true
+        NSLayoutConstraint(item: cardView.view, attribute: .height, relatedBy: .equal, toItem: guide, attribute: .height, multiplier: 0.3, constant: 0.0).isActive = true
         
         cardSliderSample = RCardSliderSampleVCtl.init()
         self.view.addSubview(cardSliderSample.view)
