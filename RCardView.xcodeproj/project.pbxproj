@@ -10,6 +10,8 @@
 		838B7AFEF70BAB39E786A6BE /* Pods_RCardView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3741DE76B14117260349F59C /* Pods_RCardView.framework */; };
 		A8D295F6220688A6001D13D6 /* Misc.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A8D295F5220688A6001D13D6 /* Misc.rtf */; };
 		A8D295F92206E209001D13D6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D295F82206E209001D13D6 /* Extension.swift */; };
+		AC35512F2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35512D2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.swift */; };
+		AC3551302216F5140062C3E0 /* RCardSliderSimpleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC35512E2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.xib */; };
 		ACB3FD952203F3B400AF04CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FD942203F3B400AF04CB /* AppDelegate.swift */; };
 		ACB3FD972203F3B400AF04CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FD962203F3B400AF04CB /* ViewController.swift */; };
 		ACB3FD9A2203F3B400AF04CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB3FD982203F3B400AF04CB /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 		3741DE76B14117260349F59C /* Pods_RCardView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCardView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8D295F5220688A6001D13D6 /* Misc.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Misc.rtf; sourceTree = "<group>"; };
 		A8D295F82206E209001D13D6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AC35512D2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardSliderSimpleTableViewCell.swift; sourceTree = "<group>"; };
+		AC35512E2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RCardSliderSimpleTableViewCell.xib; sourceTree = "<group>"; };
 		ACB3FD912203F3B400AF04CB /* RCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB3FD942203F3B400AF04CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACB3FD962203F3B400AF04CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 			children = (
 				ACBE36BE2212A4F200758EE7 /* RCardSliderTableViewCell.swift */,
 				ACBE36BF2212A4F200758EE7 /* RCardSliderTableViewCell.xib */,
+				AC35512D2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.swift */,
+				AC35512E2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.xib */,
 			);
 			path = RCardSliderViewCell;
 			sourceTree = "<group>";
@@ -240,6 +246,7 @@
 				ACCDF11D22044F340014FDBA /* RCardColViewCell.xib in Resources */,
 				ACCDF10F220404D70014FDBA /* RTableViewCell.xib in Resources */,
 				ACB3FD9A2203F3B400AF04CB /* Main.storyboard in Resources */,
+				AC3551302216F5140062C3E0 /* RCardSliderSimpleTableViewCell.xib in Resources */,
 				A8D295F6220688A6001D13D6 /* Misc.rtf in Resources */,
 				ACCDF1112204333E0014FDBA /* placeholder-600x400.png in Resources */,
 				ACBE36C12212A4F200758EE7 /* RCardSliderTableViewCell.xib in Resources */,
@@ -314,6 +321,7 @@
 				ACBE36C02212A4F200758EE7 /* RCardSliderTableViewCell.swift in Sources */,
 				ACBE36C42212A9E800758EE7 /* RCardSliderSampleVCtl.swift in Sources */,
 				ACB3FD952203F3B400AF04CB /* AppDelegate.swift in Sources */,
+				AC35512F2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.swift in Sources */,
 				ACCDF11522044DCF0014FDBA /* RCardHorizontalVCtl.swift in Sources */,
 				A8D295F92206E209001D13D6 /* Extension.swift in Sources */,
 			);
