@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74EA8A8DEB0B6E83E0FE0C2A /* Pods_RCardViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AEDE20F1DD40C4703A73D72 /* Pods_RCardViewTests.framework */; };
 		838B7AFEF70BAB39E786A6BE /* Pods_RCardView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3741DE76B14117260349F59C /* Pods_RCardView.framework */; };
 		A8D295F6220688A6001D13D6 /* Misc.rtf in Resources */ = {isa = PBXBuildFile; fileRef = A8D295F5220688A6001D13D6 /* Misc.rtf */; };
 		A8D295F92206E209001D13D6 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D295F82206E209001D13D6 /* Extension.swift */; };
+		AC0BFA86221A508200006209 /* RCardViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0BFA85221A508200006209 /* RCardViewTests.swift */; };
 		AC35512F2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC35512D2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.swift */; };
 		AC3551302216F5140062C3E0 /* RCardSliderSimpleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC35512E2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.xib */; };
 		ACB3FD952203F3B400AF04CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB3FD942203F3B400AF04CB /* AppDelegate.swift */; };
@@ -30,10 +32,26 @@
 		ACCDF11D22044F340014FDBA /* RCardColViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACCDF11B22044F340014FDBA /* RCardColViewCell.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AC0BFA88221A508200006209 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACB3FD892203F3B400AF04CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACB3FD902203F3B400AF04CB;
+			remoteInfo = RCardView;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		2AEDE20F1DD40C4703A73D72 /* Pods_RCardViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCardViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3741DE76B14117260349F59C /* Pods_RCardView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCardView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DE406073CCF302F02A5D528 /* Pods-RCardViewTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCardViewTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCardViewTests/Pods-RCardViewTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8F3BD48AA9492E78CA31639B /* Pods-RCardViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCardViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCardViewTests/Pods-RCardViewTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8D295F5220688A6001D13D6 /* Misc.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Misc.rtf; sourceTree = "<group>"; };
 		A8D295F82206E209001D13D6 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AC0BFA83221A508200006209 /* RCardViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCardViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC0BFA85221A508200006209 /* RCardViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardViewTests.swift; sourceTree = "<group>"; };
+		AC0BFA87221A508200006209 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC35512D2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCardSliderSimpleTableViewCell.swift; sourceTree = "<group>"; };
 		AC35512E2216F5140062C3E0 /* RCardSliderSimpleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RCardSliderSimpleTableViewCell.xib; sourceTree = "<group>"; };
 		ACB3FD912203F3B400AF04CB /* RCardView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCardView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +77,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AC0BFA80221A508200006209 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74EA8A8DEB0B6E83E0FE0C2A /* Pods_RCardViewTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACB3FD8E2203F3B400AF04CB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,6 +101,8 @@
 			children = (
 				CC7AADF50772F8D1B0FF6352 /* Pods-RCardView.debug.xcconfig */,
 				F499497395ABF01A7694216E /* Pods-RCardView.release.xcconfig */,
+				4DE406073CCF302F02A5D528 /* Pods-RCardViewTests.debug.xcconfig */,
+				8F3BD48AA9492E78CA31639B /* Pods-RCardViewTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -83,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				3741DE76B14117260349F59C /* Pods_RCardView.framework */,
+				2AEDE20F1DD40C4703A73D72 /* Pods_RCardViewTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -95,10 +124,20 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		AC0BFA84221A508200006209 /* RCardViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				AC0BFA85221A508200006209 /* RCardViewTests.swift */,
+				AC0BFA87221A508200006209 /* Info.plist */,
+			);
+			path = RCardViewTests;
+			sourceTree = "<group>";
+		};
 		ACB3FD882203F3B400AF04CB = {
 			isa = PBXGroup;
 			children = (
 				ACB3FD932203F3B400AF04CB /* RCardView */,
+				AC0BFA84221A508200006209 /* RCardViewTests */,
 				ACB3FD922203F3B400AF04CB /* Products */,
 				76B970001119B8A1A2F85830 /* Pods */,
 				83375F87C3AFE609D72B855D /* Frameworks */,
@@ -109,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				ACB3FD912203F3B400AF04CB /* RCardView.app */,
+				AC0BFA83221A508200006209 /* RCardViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +224,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AC0BFA82221A508200006209 /* RCardViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC0BFA8C221A508200006209 /* Build configuration list for PBXNativeTarget "RCardViewTests" */;
+			buildPhases = (
+				82CB9AB4056FCA836E683AE1 /* [CP] Check Pods Manifest.lock */,
+				AC0BFA7F221A508200006209 /* Sources */,
+				AC0BFA80221A508200006209 /* Frameworks */,
+				AC0BFA81221A508200006209 /* Resources */,
+				99BACDB56D7EEB3951CF06DC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC0BFA89221A508200006209 /* PBXTargetDependency */,
+			);
+			name = RCardViewTests;
+			productName = RCardViewTests;
+			productReference = AC0BFA83221A508200006209 /* RCardViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		ACB3FD902203F3B400AF04CB /* RCardView */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ACB3FDA32203F3C000AF04CB /* Build configuration list for PBXNativeTarget "RCardView" */;
@@ -213,6 +273,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = nmi;
 				TargetAttributes = {
+					AC0BFA82221A508200006209 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = ACB3FD902203F3B400AF04CB;
+					};
 					ACB3FD902203F3B400AF04CB = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -232,11 +296,19 @@
 			projectRoot = "";
 			targets = (
 				ACB3FD902203F3B400AF04CB /* RCardView */,
+				AC0BFA82221A508200006209 /* RCardViewTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AC0BFA81221A508200006209 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACB3FD8F2203F3B400AF04CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -266,7 +338,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-RCardView/Pods-RCardView-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/CardSlidingView/CardSlidingView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
@@ -275,13 +346,34 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CardSlidingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RCardView/Pods-RCardView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82CB9AB4056FCA836E683AE1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RCardViewTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		844CD07C946B02D875360637 /* [CP] Check Pods Manifest.lock */ = {
@@ -306,9 +398,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		99BACDB56D7EEB3951CF06DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RCardViewTests/Pods-RCardViewTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/CardSlidingView/CardSlidingView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CardSlidingView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RCardViewTests/Pods-RCardViewTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AC0BFA7F221A508200006209 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC0BFA86221A508200006209 /* RCardViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		ACB3FD8D2203F3B400AF04CB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,6 +454,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC0BFA89221A508200006209 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACB3FD902203F3B400AF04CB /* RCardView */;
+			targetProxy = AC0BFA88221A508200006209 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ACB3FD982203F3B400AF04CB /* Main.storyboard */ = {
@@ -349,6 +483,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AC0BFA8A221A508200006209 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DE406073CCF302F02A5D528 /* Pods-RCardViewTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NEEK5ZHF5F;
+				INFOPLIST_FILE = RCardViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledaily.RCardViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RCardView.app/RCardView";
+			};
+			name = Debug;
+		};
+		AC0BFA8B221A508200006209 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F3BD48AA9492E78CA31639B /* Pods-RCardViewTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NEEK5ZHF5F;
+				INFOPLIST_FILE = RCardViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.appledaily.RCardViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RCardView.app/RCardView";
+			};
+			name = Release;
+		};
 		ACB3FDA12203F3C000AF04CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -512,6 +688,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AC0BFA8C221A508200006209 /* Build configuration list for PBXNativeTarget "RCardViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC0BFA8A221A508200006209 /* Debug */,
+				AC0BFA8B221A508200006209 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		ACB3FD8C2203F3B400AF04CB /* Build configuration list for PBXProject "RCardView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

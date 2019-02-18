@@ -18,7 +18,7 @@ class RCardColViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        imgv.af_cancelImageRequest()
+        imgv.sd_cancelCurrentImageLoad()
         imgv.image = nil
     }
 

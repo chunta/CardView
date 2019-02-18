@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import AlamofireImage
 import SDWebImage
 
 class RCardHorizontalVCtl: UIViewController {

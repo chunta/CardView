@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import AlamofireImage
 import SDWebImage
 
 protocol RCardViewControllerDelegate {
