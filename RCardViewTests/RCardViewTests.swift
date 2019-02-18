@@ -7,7 +7,7 @@
 //
 
 import XCTest
-
+import RCardView
 class RCardViewTests: XCTestCase {
 
     override func setUp() {
@@ -21,6 +21,8 @@ class RCardViewTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let t:String = "acb"
+        print(t.capitalizingFirstLetter())
     }
 
     func testPerformanceExample() {
