@@ -17,10 +17,40 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2d-gy-RDr" customClass="GADUnifiedNativeAdView">
+                                <rect key="frame" x="75" y="64" width="225" height="400"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80v-of-so0" customClass="GADMediaView">
+                                        <rect key="frame" x="0.0" y="0.0" width="225" height="400"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="80v-of-so0" firstAttribute="width" secondItem="v2d-gy-RDr" secondAttribute="width" id="SwI-oQ-CCR"/>
+                                    <constraint firstItem="80v-of-so0" firstAttribute="centerY" secondItem="v2d-gy-RDr" secondAttribute="centerY" id="XWi-V4-Dpw"/>
+                                    <constraint firstItem="80v-of-so0" firstAttribute="centerX" secondItem="v2d-gy-RDr" secondAttribute="centerX" id="doH-0G-o2F"/>
+                                    <constraint firstItem="80v-of-so0" firstAttribute="height" secondItem="v2d-gy-RDr" secondAttribute="height" id="g41-BH-psg"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="mediaView" destination="80v-of-so0" id="mOO-zh-Ojy"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="v2d-gy-RDr" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="IJ4-fs-rdd"/>
+                            <constraint firstItem="v2d-gy-RDr" firstAttribute="centerX" secondItem="ahx-jf-1Ch" secondAttribute="centerX" id="YCD-VA-QVd"/>
+                            <constraint firstItem="v2d-gy-RDr" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.6" id="fbI-eJ-ttg"/>
+                            <constraint firstItem="v2d-gy-RDr" firstAttribute="top" secondItem="ahx-jf-1Ch" secondAttribute="top" id="x01-TJ-mFb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ahx-jf-1Ch"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jh8-Ta-xTh"/>
+                    <connections>
+                        <outlet property="nativeAdView" destination="v2d-gy-RDr" id="r48-em-knk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

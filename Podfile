@@ -7,6 +7,7 @@ target 'RCardView' do
     pod 'Alamofire'
     pod 'SDWebImage'
     pod 'CardSlidingView'
+    pod 'Google-Mobile-Ads-SDK'
 end
 
 target 'RCardViewTests' do
@@ -15,5 +16,5 @@ target 'RCardViewTests' do
   pod 'Alamofire'
   pod 'SDWebImage'
   pod 'CardSlidingView'
+  pod 'Google-Mobile-Ads-SDK'
 end
-
